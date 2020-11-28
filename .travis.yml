@@ -15,14 +15,14 @@ after_success:
   - docker build -t multi-server-LY ./server
   - docker build -t multi-worker-LY ./worker
 
-# Log in to teh docker CLI
-- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Log in to teh docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
-# Take these images and push them to docker hub
-- docker push multi-client-LY
-- docker push multi-nginx-LY
-- docker push multi-server-LY 
-- docker push multi-worker-LY 
+  # Take these images and push them to docker hub
+  - docker push multi-client-LY
+  - docker push multi-nginx-LY
+  - docker push multi-server-LY 
+  - docker push multi-worker-LY 
 
 
 
