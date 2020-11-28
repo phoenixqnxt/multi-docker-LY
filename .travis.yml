@@ -4,25 +4,25 @@ services:
   - docker
 
 before_install:
-  - docker build -t react-test-LY -f ./client/Dockerfile.dev ./client
+  - docker build -t phoenixqnxt/react-test-ly -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true react-test-LY npm run test  
+  - docker run -e CI=true phoenixqnxt/react-test-ly npm run test  
 
 after_success:
-  - docker build -t multi-client-LY ./client
-  - docker build -t multi-nginx-LY ./nginx
-  - docker build -t multi-server-LY ./server
-  - docker build -t multi-worker-LY ./worker
+  - docker build -t multi-client-ly ./client
+  - docker build -t multi-nginx-ly ./nginx
+  - docker build -t multi-server-ly ./server
+  - docker build -t multi-worker-ly ./worker
 
   # Log in to teh docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
   # Take these images and push them to docker hub
-  - docker push multi-client-LY
-  - docker push multi-nginx-LY
-  - docker push multi-server-LY 
-  - docker push multi-worker-LY 
+  - docker push multi-client-ly
+  - docker push multi-nginx-ly
+  - docker push multi-server-ly 
+  - docker push multi-worker-ly 
 
 
 
