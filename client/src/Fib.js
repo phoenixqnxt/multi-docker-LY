@@ -25,7 +25,7 @@ class Fib extends Component{
         });
     }
 
-    handleSubmit = async (event) => {
+    handleSubmit = async event => {
         event.prevenDefault();
 
         await axios.post('/api/values', {
@@ -35,14 +35,14 @@ class Fib extends Component{
         this.setState({index: ''});
     };
 
-    renderSeenIndexes(){
+    renderSeenIndexes() {
         return this.state.seenIndexes.map(({number}) => number).join(', ');
     }
 
-    renderValues(){
+    renderValues() {
         const entries = [];
 
-        for(let key in this.state.values){
+        for (let key in this.state.values) {
             entries.push(
                 <div key={key}>
                     For index {key} I calculated {this.state.values[key]}
@@ -53,8 +53,8 @@ class Fib extends Component{
         return entries;
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <label>Enter your index:</label>
