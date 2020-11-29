@@ -27,7 +27,7 @@
             "image": "phoenixqnxt/multi-server-ly",
             "hostname": "api",
             "essential": false,
-            "memory": 128
+            "memory": 128 
         },
         {
             "name": "worker",
