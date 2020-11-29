@@ -26,14 +26,14 @@ after_success:
 
 
 
-# deploy:
-#   provider: elasticbeanstalk
-#   region: us-east-2
-#   app: multi-docker-ly
-#   env: MultiDockerLy-env
-#   bucket_name: elasticbeanstalk-us-east-2-214665640462
-#   bucket_path: docker-multi-ly
-#   on:
-#     branch: master 
-#   access_key_id: $AWS_ACCESS_KEY
-#   secret_access_key: $AWS_SECRET_KEY
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-2
+  app: multi-docker-ly
+  env: MultiDockerLy-env
+  bucket_name: elasticbeanstalk-us-east-2-214665640462
+  bucket_path: docker-multi-ly
+  on:
+    branch: master 
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
